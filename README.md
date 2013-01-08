@@ -1,12 +1,14 @@
 ## Reimplementing Thor::Actions
 
+### A work in progress
+
 This library is an extraction _and reimplementation_ of Thor's file actions and
 'shell' -- arguably the most useful functionality that Thor provides, most 
 visibly in Rails generators.
 
 ### Why is this needed
 
-The functionality provided by Thor::Actions has no deep dependency on Thor.
+The functionality provided by [Thor::Actions][thor] has no deep dependency on Thor.
 There is no reason to have to subclass Thor (or even install thor at all) in 
 order to use it. That was my first thought: given I don't want to use Thor, but 
 want to do generator-y things, how simple would it be to just extract it?
@@ -87,3 +89,5 @@ completely when certain improvements were introduced.
 the simplest case, but overall I think this is a mistake that leads to 
 hard-to-follow code.
 
+
+[thor]: https://github.com/wycats/thor/blob/master/lib/thor/actions.rb 
