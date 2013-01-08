@@ -79,11 +79,10 @@ unnecessarily tightly.
 4. The internal division of responsibilities between Thor::Actions and 
 particular actions is not clear and it is leaking encapsulation juice in a number
 of places. It's definitely a smell that both Thor::Actions and individual 
-actions make filesystem changes. 
-
-Archeologically speaking (and it's only speculation here, no I have not mined 
-the depths of git history), it appears the old edifice was never torn down 
-completely when certain improvements were introduced.
+actions make filesystem changes. Archeologically speaking (and it's only 
+speculation here, no I have not mined the depths of git history), it appears the 
+old edifice was never torn down completely when certain improvements were 
+introduced.
 
 5. It makes a certain kind of sense to inherit other actions from EmptyDirectory,
 the simplest case, but overall I think this is a mistake that leads to 
