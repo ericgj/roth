@@ -1,15 +1,22 @@
+require_relative "shell/basic"
+require_relative "shell/color"
 require_relative 'action'
-%w[ basic color ].each do |f|
-  require_relative "shell/#{f}"
-end
-%w[ empty_directory create_file ].each do |f|
-  require_relative "actions/#{f}"
-end
+require_relative "actions/empty_directory"
+require_relative "actions/create_file"
 
 class FileActions
 
+  #TODO move these to top-level namespace
   FileActionError   = Class.new(StandardError)
   FileNotFoundError = Class.new(FileActionError)
+  
+  def self.from(dir, config={})
+    new Dir.pwd, dir, config
+  end
+  
+  def self.to(dir, config={})
+    new dir, Dir.pwd, config
+  end
   
   attr_accessor :shell, :config
   
